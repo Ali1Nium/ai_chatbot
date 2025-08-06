@@ -17,14 +17,14 @@ Including another URLconf
 from django.contrib import admin 
 from django.urls import path
 from chat.api.user_config_api import AuthController
-from chat.api.chat_api import ChatController
+from chat.api.text_chat_api import TextChatController
 from ninja_extra import NinjaExtraAPI
 
 api = NinjaExtraAPI()
 
 api.register_controllers(
     AuthController,
-    ChatController,
+    TextChatController,
 )
 urlpatterns = [
     path("admin/", admin.site.urls),
