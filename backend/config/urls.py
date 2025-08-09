@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin 
 from django.urls import path
+from chat.api.chat_session_api import ChatManagementController
 from chat.api.user_config_api import AuthController
 from chat.api.text_chat_api import TextChatController
 from ninja_extra import NinjaExtraAPI
@@ -25,6 +26,7 @@ api = NinjaExtraAPI()
 api.register_controllers(
     AuthController,
     TextChatController,
+    ChatManagementController
 )
 urlpatterns = [
     path("admin/", admin.site.urls),

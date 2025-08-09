@@ -3,6 +3,8 @@ from typing import Optional
 
 class TextChatRequestSchema(Schema):
     message: str
+    userChatId: str
 
 class TextChatResponseSchema(Schema):
-    reply: str
+    aiResponse: str
+    userChatId: str
